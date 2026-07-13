@@ -1,0 +1,23 @@
+{
+  "name": "octofit-tracker-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OctoFit Tracker multi-tier application workspace",
+  "scripts": {
+    "dev": "npm run setup && npm run preflight && concurrently -n backend,frontend -c blue,green \"npm run start:backend\" \"npm run start:frontend\"",
+    "setup": "npm install && npm install --prefix octofit-tracker/backend && npm install --prefix octofit-tracker/frontend",
+    "preflight": "npm run check && npm run mongo:ensure && npm run seed",
+    "check": "npm run build && npm run lint",
+    "clean": "rm -rf octofit-tracker/backend/dist octofit-tracker/frontend/dist",
+    "clean:deps": "rm -rf node_modules octofit-tracker/backend/node_modules octofit-tracker/frontend/node_modules",
+    "build": "npm run clean && npm run build --prefix octofit-tracker/backend && npm run build --prefix octofit-tracker/frontend",
+    "lint": "npm run lint --prefix octofit-tracker/frontend",
+    "mongo:ensure": "ps aux | grep mongod | grep -v grep | grep '/mongod' || brew services start mongodb/brew/mongodb-community",
+    "seed": "npm run seed --prefix octofit-tracker/backend",
+    "start:backend": "npm run dev --prefix octofit-tracker/backend",
+    "start:frontend": "npm run dev --prefix octofit-tracker/frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
