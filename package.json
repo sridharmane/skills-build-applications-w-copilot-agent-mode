@@ -1,0 +1,14 @@
+{
+  "name": "octofit-tracker-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OctoFit Tracker multi-tier application workspace",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix octofit-tracker/backend\" \"npm run dev --prefix octofit-tracker/frontend\"",
+    "build": "npm run build --prefix octofit-tracker/backend && npm run build --prefix octofit-tracker/frontend",
+    "seed": "npm run seed --prefix octofit-tracker/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
