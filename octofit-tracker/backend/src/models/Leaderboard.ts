@@ -1,4 +1,4 @@
-import { Schema, model, Types } from 'mongoose';
+import { Schema, model, Types } from "mongoose";
 
 export interface LeaderboardDocument {
   user: Types.ObjectId;
@@ -9,12 +9,15 @@ export interface LeaderboardDocument {
 
 const leaderboardSchema = new Schema<LeaderboardDocument>(
   {
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-    team: { type: Schema.Types.ObjectId, ref: 'Team', required: true },
+    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    team: { type: Schema.Types.ObjectId, ref: "Team", required: true },
     points: { type: Number, required: true },
     rank: { type: Number, required: true },
   },
   { timestamps: true },
 );
 
-export const Leaderboard = model<LeaderboardDocument>('Leaderboard', leaderboardSchema);
+export const Leaderboard = model<LeaderboardDocument>(
+  "Leaderboard",
+  leaderboardSchema,
+);

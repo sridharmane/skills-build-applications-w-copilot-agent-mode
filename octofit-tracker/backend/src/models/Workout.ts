@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
 export interface WorkoutDocument {
   title: string;
@@ -19,4 +19,4 @@ const workoutSchema = new Schema<WorkoutDocument>(
   { timestamps: true },
 );
 
-export const Workout = model<WorkoutDocument>('Workout', workoutSchema);
+export const Workout = model<WorkoutDocument>("Workout", workoutSchema);
