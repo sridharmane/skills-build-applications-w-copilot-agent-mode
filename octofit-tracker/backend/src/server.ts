@@ -28,7 +28,7 @@ app.get("/api/health", (_req, res) => {
 
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev`
+  ? `https://${codespaceName}-${port}.app.github.dev`
   : `http://localhost:${port}`;
 
 app.listen(port, () => {
