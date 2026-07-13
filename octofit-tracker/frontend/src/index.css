@@ -1,0 +1,59 @@
+:root {
+  --sans: Avenir Next, Trebuchet MS, sans-serif;
+  --heading: Georgia, Times New Roman, serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  color: #17221d;
+  background: #f4f7f1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  color: #17221d;
+  margin: 0;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.1;
+
+  @media (max-width: 1024px) {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 1.18;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
